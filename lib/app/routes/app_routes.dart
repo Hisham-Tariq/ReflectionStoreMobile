@@ -11,4 +11,7 @@ class AppRoutes {
   static const NOTIFICATIONS = '/notifications';
   static const ORDER_DETAIL = '/order-detail';
   static const FAVORITES = '/favorites';
+  static const PRODUCT_DETAIL = '/product-detail';
+  static const ORDER_SUCCESS = '/order-success';
+  static const PRODUCTS = '/products';
 }

@@ -1,4 +1,10 @@
-import '../bindings/favorites_binding.dart';
+import '../bindings/products_binding.dart';
+import '../ui/pages/products_page/products_page.dart';
+      import '../bindings/order_success_binding.dart';
+import '../ui/pages/order_success_page/order_success_page.dart';
+      import '../bindings/product_detail_binding.dart';
+import '../ui/pages/product_detail_page/product_detail_page.dart';
+      import '../bindings/favorites_binding.dart';
 import '../ui/pages/favorites_page/favorites_page.dart';
       import '../bindings/order_detail_binding.dart';
 import '../ui/pages/order_detail_page/order_detail_page.dart';
@@ -111,6 +117,24 @@ class AppPages {
       name: AppRoutes.FAVORITES,
       page: () => FavoritesPage(),
       binding: FavoritesBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.PRODUCT_DETAIL,
+      page: () => ProductDetailPage(),
+      binding: ProductDetailBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.ORDER_SUCCESS,
+      page: () => OrderSuccessPage(),
+      binding: OrderSuccessBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.PRODUCTS,
+      page: () => ProductsPage(),
+      binding: ProductsBinding(),
       transition: _defaultTransition,
     ), 
 ];
