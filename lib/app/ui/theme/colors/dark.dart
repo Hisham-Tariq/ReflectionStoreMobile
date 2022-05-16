@@ -11,7 +11,7 @@ class DarkThemeColors extends ThemeColors {
   @override
   final onPrimaryContainer = const Color(0xFFa1f6ac);
   @override
-  final secondary = const Color(0xFFb8ccb6);
+  final secondary = const Color(0xFFFFFFFF);
   @override
   final onSecondary = const Color(0xFF243425);
   @override

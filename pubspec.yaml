@@ -23,8 +23,8 @@ dependencies:
   in_app_review: 
   flutter_svg: 
   permission_handler:
-  sizer: 
-  
+  sizer:
+  font_awesome_flutter: ^10.1.0
 
 dev_dependencies:
   build_runner: 

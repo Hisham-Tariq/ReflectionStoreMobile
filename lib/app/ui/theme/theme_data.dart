@@ -177,8 +177,8 @@ class CustomTheme {
         onError: colors.onError,
         errorContainer: colors.errorContainer,
         onErrorContainer: colors.onErrorContainer,
-        inversePrimary: colors.inversePrimary,
-        shadow: colors.shadow,
+        // inversePrimary: colors.inversePrimary,
+        // shadow: colors.shadow,
       ),
     );
   }

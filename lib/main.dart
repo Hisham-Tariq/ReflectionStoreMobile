@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Struc Arch Pakistan',
+      title: 'Reflection Store',
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       translations: Translation(),
       locale: const Locale('en'),
       fallbackLocale: const Locale('en'),
-      initialRoute: AppRoutes.SPLASH,
+      initialRoute: AppRoutes.ORDER_DETAIL,
       unknownRoute: AppPages.unknownRoutePage,
       getPages: AppPages.pages,
     );
