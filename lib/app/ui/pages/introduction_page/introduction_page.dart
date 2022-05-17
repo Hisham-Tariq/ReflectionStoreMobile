@@ -20,7 +20,7 @@ class IntroductionPage extends GetView<IntroductionController> {
               controller: controller.pageController,
               children: <Widget>[
                 _IntroductionPageView(
-                    imagePath: Assets.svg.product_tour.path,
+                    imagePath: Assets.svg.productTour.path,
                     title: Strings.stepOneTitle,
                     content: Strings.stepOneContent),
                 _IntroductionPageView(

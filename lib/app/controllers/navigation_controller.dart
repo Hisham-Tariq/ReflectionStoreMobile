@@ -9,6 +9,11 @@ class NavigationController extends GetxController {
   var navigationStack = StackData<DrawerNavigationItem>();
   late List<DrawerNavigationItem> drawerNavigationItems = drawerNavigations.drawerNavigationItems;
   late final Rx<DrawerNavigationItem> selectedDrawerItem;
+  var selectedNavigationDestination = 0.obs;
+
+  String title = '';
+  Widget? leading;
+  List<Widget> actions = [];
 
   @override
   onInit() {
@@ -54,4 +59,13 @@ class NavigationController extends GetxController {
     }
   }
 
+
+  updateAppBar(){
+
+  }
+
+
+  onBottomNavigationSelected(int value) {
+    selectedNavigationDestination.value = value;
+  }
 }

@@ -50,11 +50,12 @@ class CustomTheme {
       drawerTheme: DrawerThemeData(
         backgroundColor: colors.surface1,
       ),
+
       appBarTheme: AppBarTheme(
-        backgroundColor: colors.primary,
-        iconTheme: IconThemeData(color: colors.onPrimary),
+        backgroundColor: colors.background,
+        iconTheme: IconThemeData(color: colors.onBackground),
         titleTextStyle: AppTextStyle(
-          color: colors.onPrimary,
+          color: colors.onBackground,
           fontSize: 14.0,
         ),
         elevation: 0.0,
@@ -87,6 +88,22 @@ class CustomTheme {
       ),
       radioTheme: RadioThemeData(
         fillColor: MaterialStateProperty.all<Color>(colors.secondary),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        selectedIconTheme: IconThemeData(
+          color: colors.primary,
+          size: 20,
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: colors.onBackground,
+        ),
+        showUnselectedLabels: true,
+        selectedLabelStyle: AppTextStyle(
+          color: colors.primary,
+        ),
+        unselectedLabelStyle: AppTextStyle(
+          color:colors.onBackground,
+        )
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: colors.tertiaryContainer,

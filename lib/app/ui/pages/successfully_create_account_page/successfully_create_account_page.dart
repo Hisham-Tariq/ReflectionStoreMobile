@@ -27,7 +27,7 @@ class SuccessfullyCreateAccountPage extends GetView<SuccessfullyCreateAccountCon
 
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(40, 30, 40, 0),
-                child: Assets.svg.forget_password.svg(
+                child: Assets.svg.forgotPassword.svg(
                   width: 150,
                   height: 200,
                   fit: BoxFit.contain,

@@ -12,16 +12,26 @@ import 'package:flutter/services.dart';
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/favourites.svg
+  SvgGenImage get favourites => const SvgGenImage('assets/svg/favourites.svg');
+
+  /// File path: assets/svg/forgot_password.svg
+  SvgGenImage get forgotPassword =>
+      const SvgGenImage('assets/svg/forgot_password.svg');
+
   /// File path: assets/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/svg/logo.svg');
 
+  /// File path: assets/svg/order_confirmed.svg
+  SvgGenImage get orderConfirmed =>
+      const SvgGenImage('assets/svg/order_confirmed.svg');
+
+  /// File path: assets/svg/product_tour.svg
+  SvgGenImage get productTour =>
+      const SvgGenImage('assets/svg/product_tour.svg');
+
   /// File path: assets/svg/shopping.svg
   SvgGenImage get shopping => const SvgGenImage('assets/svg/shopping.svg');
-
-  SvgGenImage get favourites => const SvgGenImage('assets/svg/favourites.svg');
-  SvgGenImage get forget_password => const SvgGenImage('assets/svg/forgot_password.svg');
-  SvgGenImage get product_tour => const SvgGenImage('assets/svg/product_tour.svg');
-
 }
 
 class Assets {

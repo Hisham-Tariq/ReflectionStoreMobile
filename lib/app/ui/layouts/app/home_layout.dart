@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 import '../../../controllers/controllers.dart';
+import '../../global_widgets/app_bottom_navigation.dart';
 import '../../global_widgets/app_drawer.dart';
-import '../../global_widgets/global_widgets.dart';
 import '../../theme/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -35,20 +35,23 @@ class HomeLayout extends GetView<NavigationController> {
       child: Obx(
         () => Scaffold(
           key: controller.scaffoldState,
-          drawer: const AppDrawer(),
+          // drawer: const AppDrawer(),
+          bottomNavigationBar: const AppBottomNavigation(),
           appBar: controller.selectedDrawerItem.value.showAppBar
               ? AppBar(
                   systemOverlayStyle: SystemUiOverlayStyle.light,
                   title: Text(
                     controller.selectedDrawerItem.value.title,
-                    style: AppTextStyle(
-                      color: context.theme.colorScheme.onPrimary,
-                      fontSize: 16,
-                    ),
+                    // style: AppTextStyle(
+                    //   color: context.theme.colorScheme.onPrimary,
+                    //   fontSize: 16,
+                    //   fontWeight: FontWeight.bold,
+                    // ),
                   ),
+            centerTitle: true,
                 )
               : null,
-          body: controller.selectedDrawerItem.value.widget,
+          body: controller.drawerNavigationItems[controller.selectedNavigationDestination.value].widget,
         ),
       ),
     );

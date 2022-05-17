@@ -8,6 +8,7 @@ enum DrawerItemType {
 class DrawerNavigationItem {
   final String title;
   final IconData icon;
+  final IconData activeIcon;
   final VoidCallback? onTap;
   final Future<bool> Function()? onClose;
   final Widget? widget;
@@ -19,6 +20,7 @@ class DrawerNavigationItem {
   DrawerNavigationItem(
     this.title,
     this.icon,
+    this.activeIcon,
     this.itemType,  {
     this.isSelected = false,
     this.showAppBar = true,

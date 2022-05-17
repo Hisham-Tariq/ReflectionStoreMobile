@@ -4,6 +4,7 @@ import '../../../../assets/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/getting_started_controller.dart';
+import '../../../routes/app_routes.dart';
 import '../../theme/text_theme.dart';
 
 class GettingStartedPage extends GetView<GettingStartedController> {
@@ -55,7 +56,9 @@ class GettingStartedPage extends GetView<GettingStartedController> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Get.toNamed(AppRoutes.LOG_IN_EMAIL);
+                  },
                   style: TextButton.styleFrom(
                     minimumSize: Size(Get.width, 60),
                     backgroundColor: context.theme.colorScheme.primary,

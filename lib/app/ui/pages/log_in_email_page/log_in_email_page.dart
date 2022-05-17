@@ -15,6 +15,10 @@ class LogInEmailPage extends GetView<LogInEmailController> {
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
+        // extendBody: true,
+        appBar: AppBar(
+          // leading: IconButton(icon: Icon(Icons.arrow_back_outlined), onPressed: () {  },),
+        ),
         body: SafeArea(
           child: SizedBox(
             width: Get.width,
@@ -28,7 +32,7 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 50),
+                        padding: const EdgeInsets.only(top: 10),
                         child: Text(
                           'Hello Again!',
                           textAlign: TextAlign.center,

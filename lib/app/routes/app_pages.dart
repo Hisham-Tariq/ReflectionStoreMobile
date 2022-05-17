@@ -1,4 +1,6 @@
-import '../bindings/products_binding.dart';
+import '../bindings/cart_binding.dart';
+import '../ui/pages/cart_page/cart_page.dart';
+      import '../bindings/products_binding.dart';
 import '../ui/pages/products_page/products_page.dart';
       import '../bindings/order_success_binding.dart';
 import '../ui/pages/order_success_page/order_success_page.dart';
@@ -135,6 +137,12 @@ class AppPages {
       name: AppRoutes.PRODUCTS,
       page: () => ProductsPage(),
       binding: ProductsBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.CART,
+      page: () => CartPage(),
+      binding: CartBinding(),
       transition: _defaultTransition,
     ), 
 ];
