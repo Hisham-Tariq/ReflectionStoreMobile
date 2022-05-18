@@ -1,6 +1,8 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_app/app/ui/theme/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../global_widgets/social_auth_button.dart';
 import '../../global_widgets/spacers.dart';
 import '../../layouts/main/widgets/main_layout_view.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,8 @@ import '../../../controllers/log_in_email_controller.dart';
 import '../../theme/text_theme.dart';
 
 class LogInEmailPage extends GetView<LogInEmailController> {
+  const LogInEmailPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,8 +21,8 @@ class LogInEmailPage extends GetView<LogInEmailController> {
       child: Scaffold(
         // extendBody: true,
         appBar: AppBar(
-          // leading: IconButton(icon: Icon(Icons.arrow_back_outlined), onPressed: () {  },),
-        ),
+            // leading: IconButton(icon: Icon(Icons.arrow_back_outlined), onPressed: () {  },),
+            ),
         body: SafeArea(
           child: SizedBox(
             width: Get.width,
@@ -37,7 +41,6 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                           'Hello Again!',
                           textAlign: TextAlign.center,
                           style: AppTextStyle(
-                            color: context.theme.colorScheme.secondary,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
                           ),
@@ -46,14 +49,14 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                       Padding(
                         padding: const EdgeInsets.only(top: 10, left: 80, right: 80),
                         child: Text(
-                            'Welcome back, you\'ve been missed',
-                            textAlign: TextAlign.center,
-                            style: AppTextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              color: context.theme.colorScheme.onBackground,
-                            ),
+                          'Welcome back, you\'ve been missed',
+                          textAlign: TextAlign.center,
+                          style: AppTextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: 12.sp,
+                            color: AppColors(context).grey400,
                           ),
+                        ),
                       ),
                     ],
                   ),
@@ -63,24 +66,12 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                     child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       autofillHints: const [AutofillHints.email],
-                      style: AppTextStyle(
-                        color: context.theme.colorScheme.onSurfaceVariant,
-                      ),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Email',
-                        hintStyle: AppTextStyle(
-                          color: Colors.white,
-                        ),
-                        prefixIcon: const Icon(
-                         FontAwesomeIcons.envelope,
+                        prefixIcon: Icon(
+                          FontAwesomeIcons.envelope,
                           size: 18,
                         ),
-                        filled: true,
-                        fillColor: context.theme.colorScheme.surfaceVariant,
-                        border: const OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                       ),
                     ),
                   ),
@@ -93,16 +84,9 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                         value ??= false;
                         return TextFormField(
                           obscureText: value,
-                          style: AppTextStyle(
-                            color: context.theme.colorScheme.onSurfaceVariant,
-                          ),
+                          obscuringCharacter: '⬤',
                           decoration: InputDecoration(
                             hintText: 'Password',
-                            filled: true,
-                            fillColor: context.theme.colorScheme.surfaceVariant,
-                            border: const OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                            ),
                             prefixIcon: Icon(
                               value ? FontAwesomeIcons.lock : FontAwesomeIcons.lock,
                               size: 18,
@@ -121,7 +105,7 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 200, top: 8),
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {},
                       child: Text(
                         'Forget Password?',
@@ -137,18 +121,11 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
                     child: TextButton(
-                      onPressed: (){},
+                      onPressed: () {},
                       style: TextButton.styleFrom(
                         minimumSize: Size(Get.width, 60),
-                        backgroundColor: context.theme.colorScheme.primary,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ),
-                      child: Text(
-                        'SIGN IN',
-                        style: AppTextStyle(
-                          color: context.theme.colorScheme.onPrimary,
-                        ),
-                      ),
+                      child: const Text('SIGN IN'),
                     ),
                   ),
                   Padding(
@@ -163,7 +140,7 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                             'Or',
                             textAlign: TextAlign.end,
                             style: AppTextStyle(
-                              color: const Color(0xFFC3C3C3),
+                              color: AppColors(context).grey400,
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
                             ),
@@ -175,45 +152,18 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
-                    child: TextButton.icon(
-                      onPressed: (){},
-                      style: TextButton.styleFrom(
-                        minimumSize: Size(Get.width, 60),
-                        backgroundColor: context.theme.colorScheme.onSecondary,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                      ),
-                      label: Text(
-                        'Sign In with Google',
-                        style: AppTextStyle(
-                          color: Colors.white,
-                        ),
-                      ), icon: const FaIcon(
-                      FontAwesomeIcons.googlePlusG,
-                      color: Colors.white,
-                      size: 22,
-                    ),
+                    child: SocialAuthButtons(
+                      icon: FontAwesomeIcons.googlePlusG,
+                      text: 'Sign In with Google',
+                      onPressed: () {},
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
-                    child: TextButton.icon(
-                      onPressed: (){},
-                      style: TextButton.styleFrom(
-                        minimumSize: Size(Get.width, 60),
-                        backgroundColor: context.theme.colorScheme.onSecondary,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                      ),
-                      icon: const FaIcon(
-                        FontAwesomeIcons.facebookSquare,
-                        color: Colors.white,
-                        size: 22,
-                      ),
-                      label: Text(
-                        'Sign In with FaceBook',
-                        style: AppTextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
+                    child: SocialAuthButtons(
+                      icon: FontAwesomeIcons.facebookSquare,
+                      text: 'Sign In with FaceBook',
+                      onPressed: () {},
                     ),
                   ),
                 ],
@@ -225,3 +175,5 @@ class LogInEmailPage extends GetView<LogInEmailController> {
     );
   }
 }
+
+
