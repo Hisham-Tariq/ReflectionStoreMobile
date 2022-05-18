@@ -1,3 +1,5 @@
+import 'package:my_app/app/ui/global_widgets/spacers.dart';
+import 'package:my_app/app/ui/theme/app_colors.dart';
 import 'package:sizer/sizer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../assets/assets.gen.dart';
@@ -5,29 +7,25 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controllers/getting_started_controller.dart';
 import '../../../routes/app_routes.dart';
+import '../../global_widgets/social_auth_button.dart';
 import '../../theme/text_theme.dart';
 
 class GettingStartedPage extends GetView<GettingStartedController> {
+  const GettingStartedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: context.theme.colorScheme.background,
-        body: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
+    return Scaffold(
+      body: SafeArea(
+        child: SizedBox.expand(
           child: Column(
-            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                 child: Text(
                   'Let\'s Get Started',
                   style: AppTextStyle(
-                    color: context.theme.colorScheme.secondary,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                   ),
@@ -39,7 +37,7 @@ class GettingStartedPage extends GetView<GettingStartedController> {
                   'Signup and Login to see what happening near you',
                   textAlign: TextAlign.center,
                   style: AppTextStyle(
-                    color: context.theme.colorScheme.secondary,
+                    color: AppColors(context).grey400,
                     fontSize: 11.sp,
                     fontWeight: FontWeight.normal,
                   ),
@@ -48,71 +46,35 @@ class GettingStartedPage extends GetView<GettingStartedController> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                 child: Assets.svg.shopping.svg(
-                  width: 200,
-                  height: 260,
+                  width: 100.w,
+                  height: 30.h,
                   fit: BoxFit.contain,
                 ),
               ),
+              const VerticalSpacer(),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextButton(
-                  onPressed: (){
-                    Get.toNamed(AppRoutes.LOG_IN_EMAIL);
-                  },
-                  style: TextButton.styleFrom(
-                    minimumSize: Size(Get.width, 60),
-                    backgroundColor: context.theme.colorScheme.primary,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  ),
-                  child: Text(
-                    'Continue With Email',
-                    style: AppTextStyle(
-                      color: context.theme.colorScheme.onPrimary,
-                    ),
-                  ),
+                  onPressed: () => Get.toNamed(AppRoutes.LOG_IN_EMAIL),
+                  style: TextButton.styleFrom(minimumSize: Size(Get.width, 60)),
+                  child: const Text('Continue With Email'),
+                ),
+              ),
+              const VerticalSpacer(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SocialAuthButtons(
+                  icon: FontAwesomeIcons.googlePlusG,
+                  text: 'Sign In with Google',
+                  onPressed: () {},
                 ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
-                child: TextButton.icon(
-                  onPressed: (){},
-                  style: TextButton.styleFrom(
-                    minimumSize: Size(Get.width, 60),
-                    backgroundColor: context.theme.colorScheme.onSecondary,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  ),
-                  label: Text(
-                    'Continue With Google',
-                    style: AppTextStyle(
-                      color: Colors.white,
-                    ),
-                  ), icon: const FaIcon(
-                  FontAwesomeIcons.googlePlusG,
-                  color: Colors.white,
-                  size: 22,
-                ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
-                child: TextButton.icon(
-                  onPressed: (){},
-                  style: TextButton.styleFrom(
-                    minimumSize: Size(Get.width, 60),
-                    backgroundColor: context.theme.colorScheme.onSecondary,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  ),
-                  icon: const FaIcon(
-                    FontAwesomeIcons.facebookSquare,
-                    color: Colors.white,
-                    size: 22,
-                  ),
-                  label: Text(
-                    'Continue With FaceBook',
-                    style: AppTextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
+                child: SocialAuthButtons(
+                  icon: FontAwesomeIcons.facebookSquare,
+                  text: 'Sign In with FaceBook',
+                  onPressed: () {},
                 ),
               ),
               Padding(
@@ -128,8 +90,8 @@ class GettingStartedPage extends GetView<GettingStartedController> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    InkWell(
-                      onTap: (){},
+                    GestureDetector(
+                      onTap: () {},
                       child: Text(
                         'Sign Up',
                         style: AppTextStyle(color: context.theme.colorScheme.primary),

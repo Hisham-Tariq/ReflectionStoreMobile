@@ -1,4 +1,5 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_app/app/ui/global_widgets/social_auth_button.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../global_widgets/spacers.dart';
@@ -9,6 +10,8 @@ import '../../../controllers/create_account_controller.dart';
 import '../../theme/text_theme.dart';
 
 class CreateAccountPage extends GetView<CreateAccountController> {
+  const CreateAccountPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,7 +27,6 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                 children: [
                   const VerticalSpacer(),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 50, left: 20),
@@ -32,7 +34,6 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                           'Create an account',
                           textAlign: TextAlign.center,
                           style: AppTextStyle(
-                            color: context.theme.colorScheme.secondary,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
                           ),
@@ -46,24 +47,12 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                     child: TextFormField(
                       keyboardType: TextInputType.name,
                       autofillHints: const [AutofillHints.name],
-                      style: AppTextStyle(
-                        color: context.theme.colorScheme.onSurfaceVariant,
-                      ),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Username',
-                        hintStyle: AppTextStyle(
-                          color: Colors.white,
-                        ),
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           FontAwesomeIcons.user,
                           size: 18,
                         ),
-                        filled: true,
-                        fillColor: context.theme.colorScheme.surfaceVariant,
-                        border: const OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                       ),
                     ),
                   ),
@@ -73,24 +62,12 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                     child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       autofillHints: const [AutofillHints.email],
-                      style: AppTextStyle(
-                        color: context.theme.colorScheme.onSurfaceVariant,
-                      ),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Email',
-                        hintStyle: AppTextStyle(
-                          color: Colors.white,
-                        ),
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           FontAwesomeIcons.envelope,
                           size: 18,
                         ),
-                        filled: true,
-                        fillColor: context.theme.colorScheme.surfaceVariant,
-                        border: const OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                       ),
                     ),
                   ),
@@ -103,16 +80,9 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                         value ??= false;
                         return TextFormField(
                           obscureText: value,
-                          style: AppTextStyle(
-                            color: context.theme.colorScheme.onSurfaceVariant,
-                          ),
+                          obscuringCharacter: "⬤",
                           decoration: InputDecoration(
                             hintText: 'Password',
-                            filled: true,
-                            fillColor: context.theme.colorScheme.surfaceVariant,
-                            border: const OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                            ),
                             prefixIcon: Icon(
                               value ? FontAwesomeIcons.lock : FontAwesomeIcons.lock,
                               size: 18,
@@ -129,21 +99,15 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                       },
                     ),
                   ),
+                  const VerticalSpacer(),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextButton(
                       onPressed: (){},
                       style: TextButton.styleFrom(
                         minimumSize: Size(Get.width, 60),
-                        backgroundColor: context.theme.colorScheme.primary,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       ),
-                      child: Text(
-                        'SIGN IN',
-                        style: AppTextStyle(
-                          color: context.theme.colorScheme.onPrimary,
-                        ),
-                      ),
+                      child: const Text('SIGN UP'),
                     ),
                   ),
                   Padding(
@@ -168,49 +132,22 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                       ],
                     ),
                   ),
+                  const VerticalSpacer(),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
-                    child: TextButton.icon(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SocialAuthButtons(
                       onPressed: (){},
-                      style: TextButton.styleFrom(
-                        minimumSize: Size(Get.width, 60),
-                        backgroundColor: context.theme.colorScheme.onSecondary,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                      ),
-                      label: Text(
-                        'Sign In with Google',
-                        style: AppTextStyle(
-                          color: Colors.white,
-                        ),
-                      ), icon: const FaIcon(
-                      FontAwesomeIcons.googlePlusG,
-                      color: Colors.white,
-                      size: 22,
-                    ),
+                      icon: FontAwesomeIcons.googlePlusG,
+                      text: 'Sign In with Google',
                     ),
                   ),
+                  const VerticalSpacer(),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
-                    child: TextButton.icon(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SocialAuthButtons(
                       onPressed: (){},
-                      style: TextButton.styleFrom(
-                        minimumSize: Size(Get.width, 60),
-                        backgroundColor: context.theme.colorScheme.onSecondary,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                      ),
-
-                      icon: const FaIcon(
-                        FontAwesomeIcons.facebookSquare,
-                        color: Colors.white,
-                        size: 22,
-                      ),
-                      label: Text(
-                        'Sign In with FaceBook',
-                        textAlign: TextAlign.center,
-                        style: AppTextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
+                      icon: FontAwesomeIcons.facebookSquare,
+                      text: 'Sign In with Facebook',
                     ),
                   ),
                 ],

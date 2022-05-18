@@ -35,22 +35,12 @@ class CustomTheme {
     );
 
     return ThemeData(
+      primaryColor: colors.primary,
+      primaryColorDark: colors.primaryDark,
+      primaryColorLight: colors.primaryLight,
       brightness: brightness,
-      useMaterial3: true,
       scaffoldBackgroundColor: colors.background,
       canvasColor: colors.background,
-      cardColor: colors.surfaceVariant,
-      cardTheme: CardTheme(
-        color: colors.surfaceVariant,
-        clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-      ),
-      drawerTheme: DrawerThemeData(
-        backgroundColor: colors.surface1,
-      ),
-
       appBarTheme: AppBarTheme(
         backgroundColor: colors.background,
         iconTheme: IconThemeData(color: colors.onBackground),
@@ -65,7 +55,7 @@ class CustomTheme {
         style: TextButton.styleFrom(
           backgroundColor: colors.primary,
           primary: colors.onPrimary,
-          shape: const StadiumBorder(),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           minimumSize: const Size(200, 50),
         ),
       ),
@@ -78,60 +68,21 @@ class CustomTheme {
         ),
       ),
       snackBarTheme: SnackBarThemeData(
-        backgroundColor: colors.inverseSurface,
-      ),
-      dialogTheme: DialogTheme(
-        backgroundColor: colors.surface3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-      ),
-      radioTheme: RadioThemeData(
-        fillColor: MaterialStateProperty.all<Color>(colors.secondary),
-      ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedIconTheme: IconThemeData(
-          color: colors.primary,
-          size: 20,
-        ),
-        unselectedIconTheme: IconThemeData(
-          color: colors.onBackground,
-        ),
-        showUnselectedLabels: true,
-        selectedLabelStyle: AppTextStyle(
-          color: colors.primary,
-        ),
-        unselectedLabelStyle: AppTextStyle(
-          color:colors.onBackground,
-        )
-      ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: colors.tertiaryContainer,
-        foregroundColor: colors.onTertiaryContainer,
-        hoverElevation: 4.0,
-        elevation: 1.0,
-        highlightElevation: 4.0,
-        splashColor: colors.tertiaryContainer,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
-        ),
-        // extendedtextStyle: Themes.AppTextStyleFamily.copyWith(),
+        backgroundColor: colors.inverseBackground,
       ),
       inputDecorationTheme: InputDecorationTheme(
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          border: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: colors.onSurface,
-            ),
+          contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+          border: const OutlineInputBorder(
+            borderSide: BorderSide.none,
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: colors.secondary,
+              color: colors.primary,
             ),
           ),
-          focusedErrorBorder: const OutlineInputBorder(
+          focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.red,
+              color: colors.errorDark,
             ),
           ),
           errorBorder: OutlineInputBorder(
@@ -142,60 +93,21 @@ class CustomTheme {
           errorStyle: AppTextStyle(
             color: colors.error,
           )),
-      bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: colors.surfaceVariant,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.elliptical(100, 10),
-          ),
-        ),
-      ),
-      navigationRailTheme: NavigationRailThemeData(
-        labelType: NavigationRailLabelType.all,
-        backgroundColor: colors.surface2,
-        selectedIconTheme: IconThemeData(
-          color: colors.onSecondaryContainer,
-        ),
-        unselectedIconTheme: IconThemeData(
-          color: colors.onSurface,
-        ),
-        selectedLabelTextStyle: AppTextStyle(
-          color: colors.onSurface,
-        ),
-        unselectedLabelTextStyle: AppTextStyle(
-          color: colors.onSurfaceVariant,
-        ),
-      ),
-      dividerColor: colors.surfaceVariant,
-      colorScheme: ColorScheme(
+      colorScheme: ColorScheme.fromSwatch().copyWith(
         brightness: brightness,
-        primary: colors.primary,
-        onPrimary: colors.onPrimary,
-        primaryContainer: colors.primaryContainer,
-        onPrimaryContainer: colors.onPrimaryContainer,
-        surface: colors.surface,
-        onSurface: colors.onSurface,
-        onSurfaceVariant: colors.onSurfaceVariant,
-        surfaceVariant: colors.surfaceVariant,
-        inverseSurface: colors.inverseSurface,
-        onInverseSurface: colors.inverseOnSurface,
         secondary: colors.secondary,
-        onSecondary: colors.onSecondary,
-        secondaryContainer: colors.secondaryContainer,
-        onSecondaryContainer: colors.onSecondaryContainer,
-        tertiary: colors.tertiary,
-        tertiaryContainer: colors.tertiaryContainer,
-        onTertiary: colors.onTertiary,
-        onTertiaryContainer: colors.onTertiaryContainer,
-        outline: colors.outline,
+        primary: colors.primary,
         background: colors.background,
         onBackground: colors.onBackground,
+        inverseSurface: colors.inverseBackground,
+        onInverseSurface: colors.onInverseBackground,
         error: colors.error,
         onError: colors.onError,
-        errorContainer: colors.errorContainer,
-        onErrorContainer: colors.onErrorContainer,
-        // inversePrimary: colors.inversePrimary,
-        // shadow: colors.shadow,
+        onPrimary: colors.onPrimary,
+        onSecondary: colors.onSecondaryLight,
+        onSurface: colors.onBackground,
+        surface: colors.background,
+
       ),
     );
   }

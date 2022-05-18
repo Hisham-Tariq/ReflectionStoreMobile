@@ -1,55 +1,104 @@
 import 'package:flutter/material.dart';
 import 'colors_interface.dart';
 
-class LightThemeColors extends ThemeColors {
+class LightThemeColors implements ThemeColors {
+  // Primary
   @override
-  final primary = const Color(0xFF166d33);
+  final primaryLight = const Color(0xFFFDE047);
   @override
-  final onPrimary = const Color(0xFFffffff);
+  final primary = const Color(0xFFFACC15);
   @override
-  final primaryContainer = const Color(0xFFa1f6ac);
+  final primaryDark = const Color(0xFFEAB308);
   @override
-  final onPrimaryContainer = const Color(0xFF002108);
+  final onPrimary = const Color(0xFF000000);
+
+
+  // Secondary
   @override
-  final secondary = const Color(0xFF516351);
+  final secondary = const Color(0xFF00334E);
   @override
-  final onSecondary = const Color(0xFFffffff);
+  final secondary400 = const Color(0xFF1E6A92);
   @override
-  final secondaryContainer = const Color(0xFFd3e8d1);
+  final secondary300 = const Color(0xFF57AAD6);
   @override
-  final onSecondaryContainer = const Color(0xFF0e1f11);
+  final secondary200 = const Color(0xFFBAE7FF);
   @override
-  final tertiary = const Color(0xFF39656d);
+  final secondary100 = const Color(0xFFF5FBFF);
   @override
-  final onTertiary = const Color(0xFFffffff);
+  final onSecondaryLight = const Color(0xFFFFFFFF);
   @override
-  final tertiaryContainer = const Color(0xFFbdeaf3);
+  final onSecondaryDark = const Color(0xFF111827);
+
+
+  // GreyScale
   @override
-  final onTertiaryContainer = const Color(0xFF001f24);
+  final grey50 = const Color(0xFFF9FAFB);
   @override
-  final error = const Color(0xFFba1b1b);
+  final grey100 = const Color(0xFFF3F4F6);
   @override
-  final errorContainer = const Color(0xFFffdad4);
+  final grey200 = const Color(0xFFE5E7EB);
   @override
-  final onError = const Color(0xFFffffff);
+  final grey300 = const Color(0xFFD1D5DB);
   @override
-  final onErrorContainer = const Color(0xFF410001);
+  final grey400 = const Color(0xFF9CA3AF);
   @override
-  final background = const Color(0xFFfbfdf7);
+  final grey500 = const Color(0xFF6B7280);
   @override
-  final onBackground = const Color(0xFF1a1c19);
+  final grey600 = const Color(0xFF4B5563);
   @override
-  final surface = const Color(0xFFfbfdf7);
+  final grey700 = const Color(0xFF374151);
   @override
-  final onSurface = const Color(0xFF1a1c19);
+  final grey800 = const Color(0xFF1F2937);
   @override
-  final surfaceVariant = const Color(0xFFdee5da);
+  final grey900 = const Color(0xFF1a1a1a);
+
+  // Success
   @override
-  final onSurfaceVariant = const Color(0xFF414940);
+  final successLight = const Color(0xFF4ADE80);
   @override
-  final outline = const Color(0xFF727970);
+  final success = const Color(0xFF22C55E);
   @override
-  final inverseOnSurface = const Color(0xFFf0f1eb);
+  final successDark = const Color(0xFF16A34A);
   @override
-  final inverseSurface = const Color(0xFF2f312e);
+  final onSuccess = const Color(0xFF0d0d0d);
+
+  // Warning
+  @override
+  final warningLight = const Color(0xFFFDE047);
+  @override
+  final warning = const Color(0xFFFACC15);
+  @override
+  final warningDark = const Color(0xFFEAB308);
+  @override
+  final onWarning = const Color(0xFF0d0d0d);
+
+  // Error
+  @override
+  final errorLight = const Color(0xFFFF7171);
+  @override
+  final error = const Color(0xFFFF4747);
+  @override
+  final errorDark = const Color(0xFFDD3333);
+  @override
+  final onError = const Color(0xFF000000);
+
+
+  @override
+  final background = const Color(0xFFFFFFFF);
+  @override
+  final onBackground = const Color(0xFF000000);
+
+  @override
+  final inverseBackground = const Color(0xFF0d0d0d);
+  @override
+  final onInverseBackground = const Color(0xFFFFFFFF);
+
+  @override
+  Color get black => const Color(0xFF111827);
+
+  @override
+  Color get white => const Color(0xFFFFFFFF);
+
+
+
 }
