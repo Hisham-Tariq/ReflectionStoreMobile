@@ -62,8 +62,8 @@ class CustomTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           primary: colors.primary,
-          shape: const StadiumBorder(),
-          side: BorderSide(color: colors.secondary, width: 1),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          side: BorderSide(color: colors.primary, width: 1),
           minimumSize: const Size(200, 50),
         ),
       ),

@@ -1,3 +1,6 @@
 
 import 'package:get/get.dart';
-class OrderSuccessController extends GetxController {}
+class OrderSuccessController extends GetxController {
+  void onViewProduct() {
+  }
+}

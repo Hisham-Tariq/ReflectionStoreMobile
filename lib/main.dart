@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       translations: Translation(),
       locale: const Locale('en'),
       fallbackLocale: const Locale('en'),
-      initialRoute: AppRoutes.LOG_IN_EMAIL,
+      initialRoute: AppRoutes.CART,
       unknownRoute: AppPages.unknownRoutePage,
       getPages: AppPages.pages,
     );
