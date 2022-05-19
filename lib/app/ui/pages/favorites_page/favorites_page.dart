@@ -1,11 +1,11 @@
 import 'package:sizer/sizer.dart';
 
 import '../../../../assets/assets.gen.dart';
-import '../../layouts/main/widgets/main_layout_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/favorites_controller.dart';
+import '../../theme/app_colors.dart';
 import '../../theme/text_theme.dart';
 
 class FavoritesPage extends GetView<FavoritesController> {
@@ -36,7 +36,6 @@ class FavoritesPage extends GetView<FavoritesController> {
                 child: Text(
                   'No favourites found',
                   style: AppTextStyle(
-                    color: context.theme.colorScheme.secondary,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                   ),
@@ -48,7 +47,7 @@ class FavoritesPage extends GetView<FavoritesController> {
                   'Like an product to find it later, and receive notifications before it sells out.',
                   textAlign: TextAlign.center,
                   style: AppTextStyle(
-                    color: context.theme.colorScheme.secondary,
+                    color: AppColors(context).grey100,
                     fontSize: 11.sp,
                     fontWeight: FontWeight.normal,
                   ),

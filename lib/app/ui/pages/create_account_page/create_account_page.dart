@@ -103,7 +103,7 @@ class CreateAccountPage extends GetView<CreateAccountController> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextButton(
-                      onPressed: (){},
+                      onPressed: controller.goToHomeScreen,
                       style: TextButton.styleFrom(
                         minimumSize: Size(Get.width, 60),
                       ),

@@ -121,7 +121,7 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(20, 24, 20, 0),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed:  controller.goToHomeScreen,
                       style: TextButton.styleFrom(
                         minimumSize: Size(Get.width, 60),
                       ),

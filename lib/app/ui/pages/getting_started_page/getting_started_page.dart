@@ -19,10 +19,10 @@ class GettingStartedPage extends GetView<GettingStartedController> {
       body: SafeArea(
         child: SizedBox.expand(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                 child: Text(
                   'Let\'s Get Started',
                   style: AppTextStyle(
@@ -55,7 +55,7 @@ class GettingStartedPage extends GetView<GettingStartedController> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextButton(
-                  onPressed: () => Get.toNamed(AppRoutes.LOG_IN_EMAIL),
+                  onPressed: controller.goToLoginScreen,
                   style: TextButton.styleFrom(minimumSize: Size(Get.width, 60)),
                   child: const Text('Continue With Email'),
                 ),
@@ -91,7 +91,7 @@ class GettingStartedPage extends GetView<GettingStartedController> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: controller.goToSignUpScreen,
                       child: Text(
                         'Sign Up',
                         style: AppTextStyle(color: context.theme.colorScheme.primary),

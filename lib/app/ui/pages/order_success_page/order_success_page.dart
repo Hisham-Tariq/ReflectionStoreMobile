@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/order_success_controller.dart';
+import '../../theme/app_colors.dart';
 import '../../theme/text_theme.dart';
 
 class OrderSuccessPage extends GetView<OrderSuccessController> {
@@ -23,12 +24,11 @@ class OrderSuccessPage extends GetView<OrderSuccessController> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                 child: Assets.svg.orderConfirmed.svg(
-                  width: 150,
-                  height: 150,
+                  width: 170,
+                  height: 170,
                   fit: BoxFit.contain,
                 ),
               ),
@@ -37,7 +37,6 @@ class OrderSuccessPage extends GetView<OrderSuccessController> {
                 child: Text(
                   'Order Complete',
                   style: AppTextStyle(
-                    color: context.theme.colorScheme.secondary,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                   ),
@@ -46,10 +45,10 @@ class OrderSuccessPage extends GetView<OrderSuccessController> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(70, 24, 70, 0),
                 child: Text(
-                  'Your payment was successfull! see you at the product',
+                  'Your payment was successful! see you at the product',
                   textAlign: TextAlign.center,
                   style: AppTextStyle(
-                    color: context.theme.colorScheme.secondary,
+                    color: AppColors(context).grey400,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.normal,
                   ),
@@ -58,35 +57,29 @@ class OrderSuccessPage extends GetView<OrderSuccessController> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                 child: TextButton(
-                  onPressed: (){},
-                  style: TextButton.styleFrom(
-                    minimumSize: Size(Get.width, 60),
-                    backgroundColor: context.theme.colorScheme.primary,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  ),
-                  child: Text(
-                    'View Poduct',
-                    style: AppTextStyle(
-                      color: context.theme.colorScheme.onPrimary,
-                    ),
-                  ),
+                  onPressed: controller.onViewProduct,
+                  style: TextButton.styleFrom(minimumSize: Size(Get.width, 60)),
+                  child: const Text('View Product'),
                 ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                child: TextButton(
-                  onPressed: (){},
-                  style: TextButton.styleFrom(
+                child: OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
                     minimumSize: Size(Get.width, 60),
-                    backgroundColor: context.theme.colorScheme.onSecondary,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(
+                          color: AppColors(context).primary,
+                          style: BorderStyle.solid,
+                          width: 1),
                     ),
                   ),
                   child: Text(
                     'Discover more products',
                     style: AppTextStyle(
-                      color: Colors.white,
+                      color: AppColors(context).primary,
                     ),
                   ),
                 ),
