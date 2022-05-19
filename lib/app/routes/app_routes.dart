@@ -15,4 +15,6 @@ class AppRoutes {
   static const ORDER_SUCCESS = '/order-success';
   static const PRODUCTS = '/products';
   static const CART = '/cart';
+  static const FORGET_PASSWORD = '/forget-password';
+  static const CONFIRM_PASSWORD = '/confirm-password';
 }

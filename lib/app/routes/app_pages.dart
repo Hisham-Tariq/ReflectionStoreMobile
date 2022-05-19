@@ -1,4 +1,8 @@
-import '../bindings/cart_binding.dart';
+import '../bindings/confirm_password_binding.dart';
+import '../ui/pages/confirm_password_page/confirm_password_page.dart';
+      import '../bindings/forget_password_binding.dart';
+import '../ui/pages/forget_password_page/forget_password_page.dart';
+      import '../bindings/cart_binding.dart';
 import '../ui/pages/cart_page/cart_page.dart';
       import '../bindings/products_binding.dart';
 import '../ui/pages/products_page/products_page.dart';
@@ -143,6 +147,18 @@ class AppPages {
       name: AppRoutes.CART,
       page: () => CartPage(),
       binding: CartBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.FORGET_PASSWORD,
+      page: () => ForgetPasswordPage(),
+      binding: ForgetPasswordBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.CONFIRM_PASSWORD,
+      page: () => ConfirmPasswordPage(),
+      binding: ConfirmPasswordBinding(),
       transition: _defaultTransition,
     ), 
 ];
