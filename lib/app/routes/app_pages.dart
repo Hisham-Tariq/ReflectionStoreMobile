@@ -1,4 +1,12 @@
-import '../bindings/confirm_password_binding.dart';
+import '../bindings/checkout_binding.dart';
+import '../ui/pages/checkout_page/checkout_page.dart';
+      import '../bindings/most_popular_binding.dart';
+import '../ui/pages/most_popular_page/most_popular_page.dart';
+      import '../bindings/wishlist_binding.dart';
+import '../ui/pages/wishlist_page/wishlist_page.dart';
+      import '../bindings/special_offers_binding.dart';
+import '../ui/pages/special_offers_page/special_offers_page.dart';
+      import '../bindings/confirm_password_binding.dart';
 import '../ui/pages/confirm_password_page/confirm_password_page.dart';
       import '../bindings/forget_password_binding.dart';
 import '../ui/pages/forget_password_page/forget_password_page.dart';
@@ -159,6 +167,30 @@ class AppPages {
       name: AppRoutes.CONFIRM_PASSWORD,
       page: () => ConfirmPasswordPage(),
       binding: ConfirmPasswordBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.SPECIAL_OFFERS,
+      page: () => SpecialOffersPage(),
+      binding: SpecialOffersBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.WISHLIST,
+      page: () => WishlistPage(),
+      binding: WishlistBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.MOST_POPULAR,
+      page: () => MostPopularPage(),
+      binding: MostPopularBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.CHECKOUT,
+      page: () => CheckoutPage(),
+      binding: CheckoutBinding(),
       transition: _defaultTransition,
     ), 
 ];

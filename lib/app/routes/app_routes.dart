@@ -17,4 +17,8 @@ class AppRoutes {
   static const CART = '/cart';
   static const FORGET_PASSWORD = '/forget-password';
   static const CONFIRM_PASSWORD = '/confirm-password';
+  static const SPECIAL_OFFERS = '/special-offers';
+  static const WISHLIST = '/wishlist';
+  static const MOST_POPULAR = '/most-popular';
+  static const CHECKOUT = '/checkout';
 }
