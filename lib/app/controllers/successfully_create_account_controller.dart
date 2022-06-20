@@ -1,3 +1,9 @@
 
 import 'package:get/get.dart';
-class SuccessfullyCreateAccountController extends GetxController {}
+
+import '../routes/app_routes.dart';
+class SuccessfullyCreateAccountController extends GetxController {
+  goToHomePage() {
+    Get.offAllNamed(AppRoutes.HOME);
+  }
+}

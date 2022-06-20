@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:my_app/app/ui/pages/cart_page/cart_page.dart';
+import 'package:my_app/app/ui/pages/favorites_page/favorites_page.dart';
+import 'package:my_app/app/ui/pages/products_page/products_page.dart';
 import '../ui/pages/home_page/home_page.dart';
 import '../ui/pages/setting_page/setting_page.dart';
 import '../ui_models/drawer_navigation_item.dart';
@@ -26,6 +29,7 @@ final List<DrawerNavigationItem> drawerNavigationItems = [
         inAppReview.requestReview();
       }
     },
+    widget: ProductsPage(),
   ),
   DrawerNavigationItem(
     "Wishlist",
@@ -39,6 +43,7 @@ final List<DrawerNavigationItem> drawerNavigationItems = [
         inAppReview.requestReview();
       }
     },
+    widget: FavoritesPage(),
   ),
 
   DrawerNavigationItem(
@@ -46,7 +51,7 @@ final List<DrawerNavigationItem> drawerNavigationItems = [
     Icons.add_shopping_cart,
     Icons.add_shopping_cart,
     DrawerItemType.viewBased,
-    widget: const SettingPage(),
+    widget: CartPage(),
   ),
   DrawerNavigationItem(
     "Profile",
@@ -56,5 +61,6 @@ final List<DrawerNavigationItem> drawerNavigationItems = [
     onTap: () async {
       Fluttertoast.showToast(msg: "Logging Out User");
     },
+    widget: const HomePage(),
   ),
 ];

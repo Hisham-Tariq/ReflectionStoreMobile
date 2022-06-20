@@ -9,11 +9,35 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/carousal_1.png
+  AssetGenImage get carousal1 =>
+      const AssetGenImage('assets/images/carousal_1.png');
+
+  /// File path: assets/images/glasses1.png
+  AssetGenImage get glasses1 =>
+      const AssetGenImage('assets/images/glasses1.png');
+
+  /// File path: assets/images/profile.png
+  AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
+}
+
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/done.svg
+  SvgGenImage get done => const SvgGenImage('assets/svg/done.svg');
+
+  /// File path: assets/svg/favourite.svg
+  SvgGenImage get favourite => const SvgGenImage('assets/svg/favourite.svg');
+
   /// File path: assets/svg/favourites.svg
   SvgGenImage get favourites => const SvgGenImage('assets/svg/favourites.svg');
+
+  /// File path: assets/svg/filter.svg
+  SvgGenImage get filter => const SvgGenImage('assets/svg/filter.svg');
 
   /// File path: assets/svg/forgot_password.svg
   SvgGenImage get forgotPassword =>
@@ -21,6 +45,10 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/svg/logo.svg');
+
+  /// File path: assets/svg/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/svg/notification.svg');
 
   /// File path: assets/svg/order_confirmed.svg
   SvgGenImage get orderConfirmed =>
@@ -30,6 +58,9 @@ class $AssetsSvgGen {
   SvgGenImage get productTour =>
       const SvgGenImage('assets/svg/product_tour.svg');
 
+  /// File path: assets/svg/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/svg/search.svg');
+
   /// File path: assets/svg/shopping.svg
   SvgGenImage get shopping => const SvgGenImage('assets/svg/shopping.svg');
 }
@@ -37,6 +68,7 @@ class $AssetsSvgGen {
 class Assets {
   Assets._();
 
+  static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 

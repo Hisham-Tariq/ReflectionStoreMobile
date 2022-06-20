@@ -55,14 +55,16 @@ class CustomTheme {
         style: TextButton.styleFrom(
           backgroundColor: colors.primary,
           primary: colors.onPrimary,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           minimumSize: const Size(200, 50),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           primary: colors.primary,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           side: BorderSide(color: colors.primary, width: 1),
           minimumSize: const Size(200, 50),
         ),
@@ -71,28 +73,33 @@ class CustomTheme {
         backgroundColor: colors.inverseBackground,
       ),
       inputDecorationTheme: InputDecorationTheme(
-          contentPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-          border: const OutlineInputBorder(
-            borderSide: BorderSide.none,
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: colors.primary,
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: colors.primary,
-            ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: colors.errorDark,
           ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: colors.errorDark,
-            ),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: colors.error,
-            ),
-          ),
-          errorStyle: AppTextStyle(
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
             color: colors.error,
-          )),
+          ),
+        ),
+        errorStyle: AppTextStyle(
+          color: colors.error,
+        ),
+      ),
+      navigationBarTheme:  NavigationBarThemeData(
+        indicatorColor: colors.primary,
+      ),
       colorScheme: ColorScheme.fromSwatch().copyWith(
         brightness: brightness,
         secondary: colors.secondary,
@@ -107,7 +114,6 @@ class CustomTheme {
         onSecondary: colors.onSecondaryLight,
         onSurface: colors.onBackground,
         surface: colors.background,
-
       ),
     );
   }

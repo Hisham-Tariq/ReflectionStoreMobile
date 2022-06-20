@@ -106,7 +106,7 @@ class LogInEmailPage extends GetView<LogInEmailController> {
                   Padding(
                     padding: const EdgeInsets.only(left: 200, top: 8),
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: controller.goToForgetPasswordScreen,
                       child: Text(
                         'Forget Password?',
                         textAlign: TextAlign.right,

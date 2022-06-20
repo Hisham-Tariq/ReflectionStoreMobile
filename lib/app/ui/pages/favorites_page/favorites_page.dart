@@ -1,79 +1,75 @@
 import 'package:sizer/sizer.dart';
-
 import '../../../../assets/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../controllers/favorites_controller.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/text_theme.dart';
+import 'FavouriteWidget/product_card.dart';
 
 class FavoritesPage extends GetView<FavoritesController> {
+  const FavoritesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: context.theme.colorScheme.background,
-        body: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        body:SingleChildScrollView(
+          child: ListView(
             children: [
+              ListTile(
+              onTap: () {},
+              leading: CircleAvatar(
+                backgroundColor: Colors.yellow.withOpacity(0.4),
+                radius: 30,
+                child: const Icon(Icons.check_circle_outline_outlined,
+                    color: Colors.yellow),
+              ),
+              title: Text(
+                "Order Success",
+                style: AppTextStyle(
+                  fontSize: 16,
+                ),
+              ),
 
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                child: Assets.svg.favourites.svg(
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
-                child: Text(
-                  'No favourites found',
+            subtitle: RichText(
+              text: TextSpan(
                   style: AppTextStyle(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(40, 24, 40, 0),
-                child: Text(
-                  'Like an product to find it later, and receive notifications before it sells out.',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyle(
-                    color: AppColors(context).grey100,
-                    fontSize: 11.sp,
                     fontWeight: FontWeight.normal,
+                    fontSize: 12,
+                    color: Colors.white.withOpacity(0.9),
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-                child: TextButton(
-                  onPressed: (){},
-                  style: TextButton.styleFrom(
-                    minimumSize: Size(200, 60),
-                    backgroundColor: context.theme.colorScheme.primary,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                  ),
-                  child: Text(
-                    'Find Products',
-                    style: AppTextStyle(
-                      color: context.theme.colorScheme.onPrimary,
+                  text: "Order  ",
+                  children: [
+                    TextSpan(
+                      text: "#12345678 ",
+                      style: AppTextStyle(
+                        color: Colors.yellow,
+                      ),
                     ),
-                  ),
-                ),
-              ),
+                    TextSpan(
+                      text:
+                      "has been completed & arrived at the destination. address.(Please Rate your Order)",
+                      style: AppTextStyle(
+                        color: Colors.white.withOpacity(0.9),
+                      ),
+                    ),
+                    TextSpan(
+                      text:
+                      "\nJuly20, 2022 (8:10 PM)",
+                      style: AppTextStyle(
+                        color: Colors.white54,
+                      ),),
+
+                  ]),
+            )),
             ],
           ),
+          ),
         ),
-      ),
     );
   }
 }
+
+

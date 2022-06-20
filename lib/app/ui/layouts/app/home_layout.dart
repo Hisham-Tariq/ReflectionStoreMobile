@@ -33,25 +33,27 @@ class HomeLayout extends GetView<NavigationController> {
         return Future.value(false);
       },
       child: Obx(
-        () => Scaffold(
-          key: controller.scaffoldState,
-          // drawer: const AppDrawer(),
-          bottomNavigationBar: const AppBottomNavigation(),
-          appBar: controller.selectedDrawerItem.value.showAppBar
-              ? AppBar(
-                  systemOverlayStyle: SystemUiOverlayStyle.light,
-                  title: Text(
-                    controller.selectedDrawerItem.value.title,
-                    // style: AppTextStyle(
-                    //   color: context.theme.colorScheme.onPrimary,
-                    //   fontSize: 16,
-                    //   fontWeight: FontWeight.bold,
-                    // ),
-                  ),
-            centerTitle: true,
-                )
-              : null,
-          body: controller.drawerNavigationItems[controller.selectedNavigationDestination.value].widget,
+        () => SafeArea(
+          child: Scaffold(
+            key: controller.scaffoldState,
+            // drawer: const AppDrawer(),
+            bottomNavigationBar: const AppBottomNavigation(),
+            // appBar: controller.selectedDrawerItem.value.showAppBar
+            //     ? AppBar(
+            //         systemOverlayStyle: SystemUiOverlayStyle.light,
+            //         title: Text(
+            //           controller.selectedDrawerItem.value.title,
+            //           // style: AppTextStyle(
+            //           //   color: context.theme.colorScheme.onPrimary,
+            //           //   fontSize: 16,
+            //           //   fontWeight: FontWeight.bold,
+            //           // ),
+            //         ),
+            //   centerTitle: true,
+            //       )
+            //     : null,
+            body: controller.drawerNavigationItems[controller.selectedNavigationDestination.value].widget,
+          ),
         ),
       ),
     );
