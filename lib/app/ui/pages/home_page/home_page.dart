@@ -60,17 +60,11 @@ class HomePage extends GetView<HomeController> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Assets.svg.notification.svg(
-                          color: context.theme.colorScheme.onBackground,
-                          width: 30,
-                          height: 30),
+                      Assets.svg.notification.svg(color: context.theme.colorScheme.onBackground, width: 30, height: 30),
                       SizedBox(
                         width: 10,
                       ),
-                      Assets.svg.favourite.svg(
-                          color: context.theme.colorScheme.onBackground,
-                          width: 30,
-                          height: 30),
+                      Assets.svg.favourite.svg(color: context.theme.colorScheme.onBackground, width: 30, height: 30),
                     ],
                   )
                 ],
@@ -131,7 +125,7 @@ class HomePage extends GetView<HomeController> {
                             controller.onPageChange(index);
                           },
                         ),
-                        items: [0, 1, 2,3].map((i) {
+                        items: [0, 1, 2, 3].map((i) {
                           return Builder(
                             builder: (BuildContext context) {
                               return Container(
@@ -145,15 +139,11 @@ class HomePage extends GetView<HomeController> {
                                   children: [
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                             horizontal: 20),
+                                        padding: const EdgeInsets.symmetric(horizontal: 20),
                                         child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children:  [
-
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
                                             Text(
                                               "50%",
                                               style: AppTextStyle(
@@ -175,7 +165,6 @@ class HomePage extends GetView<HomeController> {
                                                 fontSize: 12,
                                               ),
                                             ),
-
                                           ],
                                         ),
                                       ),
@@ -203,15 +192,14 @@ class HomePage extends GetView<HomeController> {
                       right: 0,
                       left: 0,
                       child: Container(
-                        alignment: Alignment.center,
-                        child:  GetBuilder<HomeController>(builder: (logic) {
-                          return _PageViewIndicators(
-                            activeIndex: logic.currentPage,
-                            totalPages: 4,
-                            indicatorColor: AppColors(context).primary,
-                          );
-                        })
-                      ),
+                          alignment: Alignment.center,
+                          child: GetBuilder<HomeController>(builder: (logic) {
+                            return _PageViewIndicators(
+                              activeIndex: logic.currentPage,
+                              totalPages: 4,
+                              indicatorColor: AppColors(context).primary,
+                            );
+                          })),
                     )
                   ],
                 ),
@@ -225,24 +213,24 @@ class HomePage extends GetView<HomeController> {
                         CircleAvatar(
                           backgroundColor: Colors.yellow.withOpacity(0.4),
                           radius: 34,
-                          child:
-                          Icon(FontAwesomeIcons.glasses,
+                          child: Icon(
+                            FontAwesomeIcons.glasses,
                             color: context.theme.colorScheme.onBackground,
                             size: 26,
                           ),
-
                         ),
                         SizedBox(
                           height: 8,
                         ),
-                        Text("Glasses",
-                        style: AppTextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),),
+                        Text(
+                          "Glasses",
+                          style: AppTextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
-
                     SizedBox(
                       width: 25,
                     ),
@@ -251,21 +239,22 @@ class HomePage extends GetView<HomeController> {
                         CircleAvatar(
                           backgroundColor: Colors.yellow.withOpacity(0.4),
                           radius: 34,
-                          child:
-                          Icon(FontAwesomeIcons.eye,
+                          child: Icon(
+                            FontAwesomeIcons.eye,
                             color: context.theme.colorScheme.onBackground,
                             size: 26,
                           ),
-
                         ),
                         SizedBox(
                           height: 8,
                         ),
-                        Text("Lenses",
+                        Text(
+                          "Lenses",
                           style: AppTextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                          ),),
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -305,13 +294,14 @@ class HomePage extends GetView<HomeController> {
                     SizedBox(
                       width: 120,
                       child: TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "All",
-                            style: AppTextStyle(
-                              color: Colors.black,
-                            ),
-                          ),),
+                        onPressed: () {},
+                        child: Text(
+                          "All",
+                          style: AppTextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
                     ),
                     const SizedBox(
                       width: 15,
@@ -345,48 +335,76 @@ class HomePage extends GetView<HomeController> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 25.0, ),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 25.0,
+                ),
                 child: Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                     Expanded(child: ProductCard(
-                       productImage:Assets.images.carousal1.image(
-                             width: double.infinity,
-                         fit: BoxFit.fill,
-                       ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
-                     )),
-                      SizedBox(width: 15,),
-                      Expanded(child: ProductCard(
-                        productImage:Assets.images.carousal1.image(
+                      Expanded(
+                          child: ProductCard(
+                        productImage: Assets.images.carousal1.image(
                           width: double.infinity,
                           fit: BoxFit.fill,
-                        ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
+                        ),
+                        productName: 'Osterbrio Glasses',
+                        rating: '4.6',
+                        soldProduct: '1,200',
+                        productPrice: '12.00',
+                      )),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(
+                          child: ProductCard(
+                        productImage: Assets.images.carousal1.image(
+                          width: double.infinity,
+                          fit: BoxFit.fill,
+                        ),
+                        productName: 'Osterbrio Glasses',
+                        rating: '4.6',
+                        soldProduct: '1,200',
+                        productPrice: '12.00',
                       )),
                     ],
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15.0, ),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 15.0,
+                ),
                 child: Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(child: ProductCard(
-                        productImage:Assets.images.carousal1.image(
+                      Expanded(
+                          child: ProductCard(
+                        productImage: Assets.images.carousal1.image(
                           width: double.infinity,
                           fit: BoxFit.fill,
-                        ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
+                        ),
+                        productName: 'Osterbrio Glasses',
+                        rating: '4.6',
+                        soldProduct: '1,200',
+                        productPrice: '12.00',
                       )),
-                      SizedBox(width: 15,),
-                      Expanded(child: ProductCard(
-                        productImage:Assets.images.carousal1.image(
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Expanded(
+                          child: ProductCard(
+                        productImage: Assets.images.carousal1.image(
                           width: double.infinity,
                           fit: BoxFit.fill,
-                        ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
+                        ),
+                        productName: 'Osterbrio Glasses',
+                        rating: '4.6',
+                        soldProduct: '1,200',
+                        productPrice: '12.00',
                       )),
                     ],
                   ),
@@ -407,7 +425,12 @@ class ProductCard extends StatelessWidget {
   final String productPrice;
   final Widget productImage;
   const ProductCard({
-    Key? key, required this.productName, required this.rating, required this.soldProduct, required this.productPrice, required this.productImage,
+    Key? key,
+    required this.productName,
+    required this.rating,
+    required this.soldProduct,
+    required this.productPrice,
+    required this.productImage,
   }) : super(key: key);
 
   @override
@@ -436,30 +459,31 @@ class ProductCard extends StatelessWidget {
                 right: 5,
                 top: 5,
                 child: Container(
-                    alignment: Alignment.topRight,
-                    child:  CircleAvatar(
-                      backgroundColor: context.theme.colorScheme.primary,
-                      radius: 22,
-                      child: Assets.svg.favourite.svg(
-                        width: 20,
-                        height: 20,
-                        color: context.theme.colorScheme.onBackground,
-                      ),
+                  alignment: Alignment.topRight,
+                  child: CircleAvatar(
+                    backgroundColor: context.theme.colorScheme.primary,
+                    radius: 22,
+                    child: Assets.svg.favourite.svg(
+                      width: 20,
+                      height: 20,
+                      color: context.theme.colorScheme.onBackground,
                     ),
+                  ),
                 ),
               )
             ],
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(
+          height: 10,
+        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(productName,
-              style: AppTextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 18
-              ),),
+            Text(
+              productName,
+              style: AppTextStyle(fontWeight: FontWeight.w900, fontSize: 18),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Row(
@@ -479,15 +503,12 @@ class ProductCard extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: " | ",
-                            style: AppTextStyle(
-                              color: context.theme.colorScheme.onBackground,
-                              fontSize: 18
-                            ),
+                            style: AppTextStyle(color: context.theme.colorScheme.onBackground, fontSize: 18),
                           ),
                         ]),
                   ),
                   InkWell(
-                    onTap: (){},
+                    onTap: () {},
                     child: Container(
                       width: 100,
                       height: 30,
@@ -497,50 +518,42 @@ class ProductCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: InkWell(
-                        onTap: (){},
-                        child:  RichText(
-                          text: TextSpan(
-                              style: AppTextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16,
-                                color: context.theme.colorScheme.onBackground,
-                              ),
-                              text: soldProduct,
-                              children: [
-                                TextSpan(
-                                  text: " sold",
-                                  style: AppTextStyle(
-                                    color: Colors.yellow,
-                                  ),
+                          onTap: () {},
+                          child: RichText(
+                            text: TextSpan(
+                                style: AppTextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 16,
+                                  color: context.theme.colorScheme.onBackground,
                                 ),
-                              ]),
-                        )
-                      ),
+                                text: soldProduct,
+                                children: [
+                                  TextSpan(
+                                    text: " sold",
+                                    style: AppTextStyle(
+                                      color: Colors.yellow,
+                                    ),
+                                  ),
+                                ]),
+                          )),
                     ),
                   ),
                 ],
               ),
             ),
-            Text("25.00 \$",
-              style: AppTextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24
-              ),),
+            Text(
+              "25.00 \$",
+              style: AppTextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
           ],
         )
       ],
-
     );
   }
 }
 
 class _PageViewIndicators extends StatelessWidget {
-  const _PageViewIndicators(
-      {Key? key,
-      required this.activeIndex,
-      required this.totalPages,
-      required this.indicatorColor})
-      : super(key: key);
+  const _PageViewIndicators({Key? key, required this.activeIndex, required this.totalPages, required this.indicatorColor}) : super(key: key);
   final int activeIndex;
   final int totalPages;
   final Color indicatorColor;
