@@ -344,15 +344,192 @@ class HomePage extends GetView<HomeController> {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Container()
-                ],
-              )
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 25.0, ),
+                child: Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                     Expanded(child: ProductCard(
+                       productImage:Assets.images.carousal1.image(
+                             width: double.infinity,
+                         fit: BoxFit.fill,
+                       ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
+                     )),
+                      SizedBox(width: 15,),
+                      Expanded(child: ProductCard(
+                        productImage:Assets.images.carousal1.image(
+                          width: double.infinity,
+                          fit: BoxFit.fill,
+                        ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
+                      )),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0, ),
+                child: Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(child: ProductCard(
+                        productImage:Assets.images.carousal1.image(
+                          width: double.infinity,
+                          fit: BoxFit.fill,
+                        ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
+                      )),
+                      SizedBox(width: 15,),
+                      Expanded(child: ProductCard(
+                        productImage:Assets.images.carousal1.image(
+                          width: double.infinity,
+                          fit: BoxFit.fill,
+                        ), productName: 'Osterbrio Glasses', rating: '4.6', soldProduct: '1,200', productPrice: '12.00',
+                      )),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class ProductCard extends StatelessWidget {
+  final String productName;
+  final String rating;
+  final String soldProduct;
+  final String productPrice;
+  final Widget productImage;
+  const ProductCard({
+    Key? key, required this.productName, required this.rating, required this.soldProduct, required this.productPrice, required this.productImage,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 180,
+          width: 170,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Container(
+                  width: 170,
+                  height: 180,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.yellow.withOpacity(0.3),
+                  ),
+                  child: productImage,
+                ),
+              ),
+              Positioned(
+                right: 5,
+                top: 5,
+                child: Container(
+                    alignment: Alignment.topRight,
+                    child:  CircleAvatar(
+                      backgroundColor: context.theme.colorScheme.primary,
+                      radius: 22,
+                      child: Assets.svg.favourite.svg(
+                        width: 20,
+                        height: 20,
+                        color: context.theme.colorScheme.onBackground,
+                      ),
+                    ),
+                ),
+              )
+            ],
+          ),
+        ),
+        SizedBox(height: 10,),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(productName,
+              style: AppTextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 18
+              ),),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Row(
+                children: [
+                  Assets.svg.star.svg(
+                    width: 24,
+                    height: 24,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                        style: AppTextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 16,
+                          color: context.theme.colorScheme.onBackground,
+                        ),
+                        text: rating,
+                        children: [
+                          TextSpan(
+                            text: " | ",
+                            style: AppTextStyle(
+                              color: context.theme.colorScheme.onBackground,
+                              fontSize: 18
+                            ),
+                          ),
+                        ]),
+                  ),
+                  InkWell(
+                    onTap: (){},
+                    child: Container(
+                      width: 100,
+                      height: 30,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: AppColors(context).primary.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: InkWell(
+                        onTap: (){},
+                        child:  RichText(
+                          text: TextSpan(
+                              style: AppTextStyle(
+                                fontWeight: FontWeight.normal,
+                                fontSize: 16,
+                                color: context.theme.colorScheme.onBackground,
+                              ),
+                              text: soldProduct,
+                              children: [
+                                TextSpan(
+                                  text: " sold",
+                                  style: AppTextStyle(
+                                    color: Colors.yellow,
+                                  ),
+                                ),
+                              ]),
+                        )
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Text("25.00 \$",
+              style: AppTextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24
+              ),),
+          ],
+        )
+      ],
+
     );
   }
 }

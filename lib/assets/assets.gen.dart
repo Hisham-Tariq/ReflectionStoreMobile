@@ -27,6 +27,9 @@ class $AssetsImagesGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/Arrow - Left.svg
+  SvgGenImage get arrowLeft => const SvgGenImage('assets/svg/Arrow - Left.svg');
+
   /// File path: assets/svg/done.svg
   SvgGenImage get done => const SvgGenImage('assets/svg/done.svg');
 
@@ -63,6 +66,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/shopping.svg
   SvgGenImage get shopping => const SvgGenImage('assets/svg/shopping.svg');
+
+  /// File path: assets/svg/star.svg
+  SvgGenImage get star => const SvgGenImage('assets/svg/star.svg');
 }
 
 class Assets {
