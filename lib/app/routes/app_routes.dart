@@ -21,4 +21,6 @@ class AppRoutes {
   static const WISHLIST = '/wishlist';
   static const MOST_POPULAR = '/most-popular';
   static const CHECKOUT = '/checkout';
+  static const GLASSESS_DETAIL = '/glassess-detail';
+  static const LENSES_DETAIL = '/lenses-detail';
 }

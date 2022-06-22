@@ -1,4 +1,8 @@
-import '../bindings/checkout_binding.dart';
+import '../bindings/lenses_detail_binding.dart';
+import '../ui/pages/lenses_detail_page/lenses_detail_page.dart';
+      import '../bindings/glassess_detail_binding.dart';
+import '../ui/pages/glassess_detail_page/glassess_detail_page.dart';
+      import '../bindings/checkout_binding.dart';
 import '../ui/pages/checkout_page/checkout_page.dart';
       import '../bindings/most_popular_binding.dart';
 import '../ui/pages/most_popular_page/most_popular_page.dart';
@@ -191,6 +195,18 @@ class AppPages {
       name: AppRoutes.CHECKOUT,
       page: () => CheckoutPage(),
       binding: CheckoutBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.GLASSESS_DETAIL,
+      page: () => GlassessDetailPage(),
+      binding: GlassessDetailBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.LENSES_DETAIL,
+      page: () => LensesDetailPage(),
+      binding: LensesDetailBinding(),
       transition: _defaultTransition,
     ), 
 ];
