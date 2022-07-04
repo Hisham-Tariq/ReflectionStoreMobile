@@ -14,6 +14,7 @@ class OrderArrivedListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+        tileColor: context.theme.colorScheme.primary.withOpacity(0.2),
         onTap: () {},
         leading: CircleAvatar(
           backgroundColor: context.theme.colorScheme.primary.withOpacity(0.2),

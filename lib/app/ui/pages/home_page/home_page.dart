@@ -45,7 +45,7 @@ class HomePage extends GetView<HomeController> {
                         ),
                       ),
                       Text(
-                        "Iqra Munir",
+                        "Hisham Tariq",
                         style: AppTextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,

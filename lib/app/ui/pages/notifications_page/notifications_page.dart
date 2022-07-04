@@ -36,7 +36,7 @@ class NotificationsPage extends GetView<NotificationsController> {
                     "Your Activity",
                     style: AppTextStyle(
                       color: context.theme.colorScheme.primary,
-                      fontSize: 22,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -45,13 +45,19 @@ class NotificationsPage extends GetView<NotificationsController> {
               ),
             ),
             Expanded(
-              child: ListView(
-                children: const [
-                  OrderSuccessListTile(),
-                  OrderArrivedListTile(),
-                  OrderCancelledListTile(),
-                  PaymentConfirmedListTile(),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: ListView(
+                  children: const [
+                    OrderSuccessListTile(),
+                    SizedBox(height: 20,),
+                    OrderArrivedListTile(),
+                    SizedBox(height: 20,),
+                    OrderCancelledListTile(),
+                    SizedBox(height: 20,),
+                    PaymentConfirmedListTile(),
+                  ],
+                ),
               ),
             ),
           ],

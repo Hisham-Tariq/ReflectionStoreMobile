@@ -1,11 +1,9 @@
-import 'package:sizer/sizer.dart';
-import '../../../../assets/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:my_app/app/ui/pages/favorites_page/FavouriteWidget/no_favourite_product.dart';
 import '../../../controllers/favorites_controller.dart';
-import '../../theme/app_colors.dart';
 import '../../theme/text_theme.dart';
-import 'FavouriteWidget/product_card.dart';
 
 class FavoritesPage extends GetView<FavoritesController> {
   const FavoritesPage({super.key});
@@ -15,58 +13,43 @@ class FavoritesPage extends GetView<FavoritesController> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: context.theme.colorScheme.background,
-        body:SingleChildScrollView(
-          child: ListView(
+
+        body: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
             children: [
-              ListTile(
-              onTap: () {},
-              leading: CircleAvatar(
-                backgroundColor: Colors.yellow.withOpacity(0.4),
-                radius: 30,
-                child: const Icon(Icons.check_circle_outline_outlined,
-                    color: Colors.yellow),
-              ),
-              title: Text(
-                "Order Success",
-                style: AppTextStyle(
-                  fontSize: 16,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: const InputDecoration(
+                    hintText: 'Search',
+                    prefixIcon: Icon(
+                      FontAwesomeIcons.search,
+                      size: 18,
+                    ),
+                    suffixIcon: Icon(
+                      FontAwesomeIcons.arrowDownWideShort,
+                      size: 18,
+                    ),
+                  ),
                 ),
               ),
-
-            subtitle: RichText(
-              text: TextSpan(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Result for jhkfkaj ",
                   style: AppTextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 12,
-                    color: Colors.white.withOpacity(0.9),
-                  ),
-                  text: "Order  ",
-                  children: [
-                    TextSpan(
-                      text: "#12345678 ",
-                      style: AppTextStyle(
-                        color: Colors.yellow,
-                      ),
-                    ),
-                    TextSpan(
-                      text:
-                      "has been completed & arrived at the destination. address.(Please Rate your Order)",
-                      style: AppTextStyle(
-                        color: Colors.white.withOpacity(0.9),
-                      ),
-                    ),
-                    TextSpan(
-                      text:
-                      "\nJuly20, 2022 (8:10 PM)",
-                      style: AppTextStyle(
-                        color: Colors.white54,
-                      ),),
-
-                  ]),
-            )),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  ),),
+                  Text("0 found"),
+                ],
+              ),
+              const NoFavouritesFoundPage(),
             ],
           ),
-          ),
+        ),
         ),
     );
   }

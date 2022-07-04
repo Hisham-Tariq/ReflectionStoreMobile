@@ -22,17 +22,17 @@ class NoFavouritesFoundPage extends StatelessWidget {
       children: [
 
         Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-          child: Assets.svg.favourites.svg(
+          padding: const EdgeInsetsDirectional.fromSTEB(20, 70, 20, 0),
+          child: Assets.images.nofound.image(
             width: 200,
             height: 200,
-            fit: BoxFit.contain,
+            color: context.theme.colorScheme.primary.withOpacity(0.5)
           ),
         ),
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
           child: Text(
-            'No favourites found',
+            'Not Found',
             style: AppTextStyle(
               fontSize: 20.sp,
               fontWeight: FontWeight.w900,
@@ -42,7 +42,7 @@ class NoFavouritesFoundPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(40, 24, 40, 0),
           child: Text(
-            'Like an product to find it later, and receive notifications before it sells out.',
+            'Sorry, the keyword you entered cannot be found, please check again or search with another keyword.',
             textAlign: TextAlign.center,
             style: AppTextStyle(
               color: AppColors(context).grey100,
@@ -51,23 +51,23 @@ class NoFavouritesFoundPage extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
-          child: TextButton(
-            onPressed: (){},
-            style: TextButton.styleFrom(
-              minimumSize: const Size(200, 60),
-              backgroundColor: context.theme.colorScheme.primary,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            ),
-            child: Text(
-              'Find Products',
-              style: AppTextStyle(
-                color: context.theme.colorScheme.onPrimary,
-              ),
-            ),
-          ),
-        ),
+        // Padding(
+        //   padding: const EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
+        //   child: TextButton(
+        //     onPressed: (){},
+        //     style: TextButton.styleFrom(
+        //       minimumSize: const Size(200, 60),
+        //       backgroundColor: context.theme.colorScheme.primary,
+        //       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        //     ),
+        //     child: Text(
+        //       'Search Something else',
+        //       style: AppTextStyle(
+        //         color: context.theme.colorScheme.onPrimary,
+        //       ),
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../theme/text_theme.dart';
 
 
@@ -11,7 +12,7 @@ class OrderCancelledListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-
+        tileColor: context.theme.colorScheme.primary.withOpacity(0.2),
         onTap: () {},
         leading: CircleAvatar(
           backgroundColor: Colors.red.withOpacity(0.2),

@@ -20,6 +20,9 @@ class $AssetsImagesGen {
   AssetGenImage get glasses1 =>
       const AssetGenImage('assets/images/glasses1.png');
 
+  /// File path: assets/images/nofound.png
+  AssetGenImage get nofound => const AssetGenImage('assets/images/nofound.png');
+
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 }
@@ -30,6 +33,12 @@ class $AssetsSvgGen {
   /// File path: assets/svg/Arrow - Left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/svg/Arrow - Left.svg');
 
+  /// File path: assets/svg/Delete.svg
+  SvgGenImage get delete => const SvgGenImage('assets/svg/Delete.svg');
+
+  /// File path: assets/svg/Filter.svg
+  SvgGenImage get filter => const SvgGenImage('assets/svg/Filter.svg');
+
   /// File path: assets/svg/done.svg
   SvgGenImage get done => const SvgGenImage('assets/svg/done.svg');
 
@@ -39,15 +48,15 @@ class $AssetsSvgGen {
   /// File path: assets/svg/favourites.svg
   SvgGenImage get favourites => const SvgGenImage('assets/svg/favourites.svg');
 
-  /// File path: assets/svg/filter.svg
-  SvgGenImage get filter => const SvgGenImage('assets/svg/filter.svg');
-
   /// File path: assets/svg/forgot_password.svg
   SvgGenImage get forgotPassword =>
       const SvgGenImage('assets/svg/forgot_password.svg');
 
   /// File path: assets/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/svg/logo.svg');
+
+  /// File path: assets/svg/noFound.svg
+  SvgGenImage get noFound => const SvgGenImage('assets/svg/noFound.svg');
 
   /// File path: assets/svg/notification.svg
   SvgGenImage get notification =>
